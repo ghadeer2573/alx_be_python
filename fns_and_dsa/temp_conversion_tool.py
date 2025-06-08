@@ -1,24 +1,19 @@
 # temp_conversion_tool.py
 
 # Global conversion factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
-FAHRENHEIT_FREEZING = 32  # Constant offset for conversions
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5/9
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 
 def convert_to_celsius(fahrenheit):
-    # Convert Fahrenheit to Celsius using global factor
-    celsius = (fahrenheit - FAHRENHEIT_FREEZING) * FAHRENHEIT_TO_CELSIUS_FACTOR
-    return celsius
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
-    # Convert Celsius to Fahrenheit using global factor
-    fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FAHRENHEIT_FREEZING
-    return fahrenheit
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
 def main():
     try:
         temp_input = input("Enter the temperature to convert: ").strip()
-        temp = float(temp_input)  # Convert to float, raises ValueError if invalid
+        temp = float(temp_input)
 
         unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
         if unit == 'C':
@@ -34,3 +29,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
