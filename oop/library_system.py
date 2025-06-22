@@ -30,17 +30,4 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def get_details(self):
-        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
-
-    def __str__(self):
-        return self.get_details()
-
-
-class Library:
-    def __init__(self):
-        self.books = []
-
-    def add_book(self, book):
-        self.books.append(book)
-
-    def list_book_
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.pa
